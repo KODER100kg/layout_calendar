@@ -6,16 +6,13 @@
   gap: $gap;
   width: calc($columns * $day-size + ($columns - 1) * $gap + 2 * $padding);
   padding: $padding;
-  margin-left: 20px;
 
   &__day {
     width: $day-size;
     height: $day-size;
     background-color: $day-bg-color;
     border: $day-border solid $day-border-color;
-    position: relative;
     box-sizing: border-box;
-    background-clip: padding-box;
     transition: all $transition-duration ease;
     display: flex;
     align-items: center;
@@ -30,16 +27,8 @@
     @for $i from 1 through 31 {
       &:nth-child(#{$i})::before {
         content: '#{$i}';
-        position: static;
-        display: block;
-        width: 100%;
-        margin: 0;
-        text-align: center;
         font-family: Arial, sans-serif;
         font-size: 30px;
-        line-height: $day-size;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: geometricPrecision;
       }
     }
   }
